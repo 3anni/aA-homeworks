@@ -62,7 +62,7 @@ class Play
   end
 
   def find_by_playwright(playwright)
-)
+    PlayDBConnection.instance.execute(<<-SQL, title)
       SELECT
         *
       FROM
